@@ -27,10 +27,6 @@ public class Ascensor {
         System.out.println("La puerta del ascensor se ha cerrado");
     }
 
-    public boolean estaPuertaAbierta() {
-        return this.puertaAbierta;
-    }
-
     public void simularAscensor() {
         Persona persona = new Persona();
 
@@ -42,14 +38,18 @@ public class Ascensor {
         this.mover(persona.getPisoActual());
 
         if(persona.getPisoActual()!=1) {
+            System.out.println("La persona ha presionado el botón de llamada del ascensor");
             this.cerrarPuerta();
             System.out.println("El ascensor se ha movido al piso " + this.pisoActual);
             this.abrirPuerta();
             System.out.println("El ascensor ha recogido a la persona");
+            this.cerrarPuerta();
         }
         else {
+            System.out.println("La persona ha presionado el botón de llamada del ascensor");
             this.abrirPuerta();
             System.out.println("El ascensor ha recogido a la persona");
+            this.cerrarPuerta();
         }
 
         this.mover(persona.getPisoDestino());
